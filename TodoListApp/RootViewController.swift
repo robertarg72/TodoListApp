@@ -50,12 +50,19 @@ class RootViewController: UITableViewController {
     
     //Datasource methods for table view
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "All your tasks"
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksList.tasks.count
+    }
+    
+    override
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return tasksList.tasks[indexPath.row].completed ? nil : indexPath
     }
     
     override
