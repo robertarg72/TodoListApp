@@ -14,13 +14,20 @@ import Foundation
 import UIKit
 
 class Task : Equatable {
-    let id:Int
+    var id:Int
     var name:String
     var notes:String
     var completed:Bool
     
     init(_ id:Int, _ name:String, _ notes:String, _ completed:Bool) {
         self.id = id
+        self.name = name
+        self.notes = notes
+        self.completed = completed
+    }
+    
+    init(_ name:String, _ notes:String, _ completed:Bool) {
+        self.id = -1
         self.name = name
         self.notes = notes
         self.completed = completed

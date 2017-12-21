@@ -21,6 +21,10 @@ class TasksList {
         let defaults = UserDefaults.standard
         let storedTasks = defaults.object(forKey: "tasks") as? [Task]
         tasks = storedTasks != nil ? storedTasks! : []
+        
+        if tasks.count == 0 {
+            tasks = self.createTestData()
+        }
     }
     
     // This method adds a new task to the user preferences file
@@ -28,6 +32,7 @@ class TasksList {
         
         if let currentTask = aTask {
             if !tasks.contains(currentTask) {
+                currentTask.id = tasks.endIndex
                 tasks.append(currentTask)
                 saveTask()
             }
@@ -58,12 +63,42 @@ class TasksList {
             }
         }
     }
-    
+   
     // This method saves task to the user preferences file
     private func saveTask() {
         let defaults = UserDefaults.standard
         defaults.set(tasks, forKey: "tasks")
         defaults.synchronize()
+    }
+    
+    // This  method generates test data to show in the app
+    private func createTestData() -> [Task]{
+        let names = [
+            "iOS Assignment 2 Design",
+            "Enterprise Milestone 2",
+            "Android Assignment 3",
+            "Web Technologies M1",
+            "UI/UX M2 Design prototype"
+        ]
+        
+        let descriptions = [
+        "iOS Assignment 2 Design, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Enterprise Milestone 2, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Android Assignment 3, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Web Technologies M1, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "UI/UX M2 Design prototype, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        ]
+        
+        var completed = true
+        
+        var tasks = [Task]()
+        
+        for i in 0 ..< names.count {
+            completed = !completed
+            let task = Task(i, names[i], descriptions[i], completed)
+            tasks.append(task)
+        }
+        return tasks
     }
     
 }

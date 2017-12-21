@@ -5,37 +5,72 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--TodoList-->
         <scene sceneID="9qz-tO-VFF">
             <objects>
-                <tableViewController title="TodoList" id="xZr-LN-mx0" sceneMemberID="viewController">
+                <tableViewController title="TodoList" id="xZr-LN-mx0" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRb-c7-12D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vrZ-xa-Gcm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskName" id="vrZ-xa-Gcm" customClass="TaskViewCell" customModule="TodoListApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vrZ-xa-Gcm" id="eKE-iT-Yct">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63r-CL-hdV">
+                                            <rect key="frame" x="13" y="6.5" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="onSwitchViewChange:" destination="vrZ-xa-Gcm" eventType="valueChanged" id="uAO-i6-VAO"/>
+                                            </connections>
+                                        </switch>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic7-rh-dZ2">
+                                            <rect key="frame" x="332" y="7" width="30" height="30"/>
+                                            <state key="normal" title="Edit"/>
+                                            <connections>
+                                                <action selector="onEditButtonPressed:" destination="vrZ-xa-Gcm" eventType="touchUpInside" id="aEm-p8-QZR"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdH-F8-oA1">
+                                            <rect key="frame" x="75" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Ic7-rh-dZ2" firstAttribute="centerY" secondItem="eKE-iT-Yct" secondAttribute="centerY" id="7xD-dh-tss"/>
+                                        <constraint firstItem="63r-CL-hdV" firstAttribute="centerY" secondItem="eKE-iT-Yct" secondAttribute="centerY" id="Ra0-fe-wE7"/>
+                                        <constraint firstItem="sdH-F8-oA1" firstAttribute="centerY" secondItem="eKE-iT-Yct" secondAttribute="centerY" id="Vxt-uk-Ij1"/>
+                                        <constraint firstItem="Ic7-rh-dZ2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sdH-F8-oA1" secondAttribute="trailing" constant="5" id="XZe-bo-K1G"/>
+                                        <constraint firstItem="63r-CL-hdV" firstAttribute="leading" secondItem="eKE-iT-Yct" secondAttribute="leadingMargin" constant="5" id="c9m-qH-FpM"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ic7-rh-dZ2" secondAttribute="trailing" constant="5" id="leQ-yS-koG"/>
+                                        <constraint firstItem="sdH-F8-oA1" firstAttribute="leading" secondItem="63r-CL-hdV" secondAttribute="trailing" constant="13" id="sqL-i6-N2V"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completed" destination="63r-CL-hdV" id="1ls-Q5-cjo"/>
+                                    <outlet property="name" destination="sdH-F8-oA1" id="ED0-Ld-q6Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="xZr-LN-mx0" id="z6G-Kn-Tbn"/>
-                            <outlet property="delegate" destination="xZr-LN-mx0" id="sSr-P6-AEW"/>
+                            <outlet property="dataSource" destination="xZr-LN-mx0" id="ZE8-Yg-xzd"/>
+                            <outlet property="delegate" destination="xZr-LN-mx0" id="LhC-Zw-llb"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo List" id="GkP-FU-0si"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4z-D9-xJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="128"/>
+            <point key="canvasLocation" x="533.60000000000002" y="127.28635682158921"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q1e-ae-bWx">
