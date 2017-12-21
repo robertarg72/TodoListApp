@@ -18,11 +18,39 @@ class TaskViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var completed: UISwitch!
+    @IBOutlet weak var editButton: UIButton!
+    
     
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func onSwitchViewChange(_ sender: UISwitch) {
+        
+        
+        if( completed!.isOn ) {
+            completed!.isOn = false
+            editButton.isEnabled = false
+            editButton.setTitleColor(.gray, for: .normal)
+            name!.textColor = UIColor(red: Utils.rgbHexaComponentToDecimal("E1"),
+                                      green: Utils.rgbHexaComponentToDecimal("E2"),
+                                      blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
+        }
+        else {
+            
+            let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
+                                        green: Utils.rgbHexaComponentToDecimal("61"),
+                                        blue: Utils.rgbHexaComponentToDecimal("61"), alpha: 1)
+            
+            let enabledColorForButtonTitle = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
+                                              green: Utils.rgbHexaComponentToDecimal("00"),
+                                              blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
+            completed!.isOn = true
+            editButton.setTitleColor(enabledColorForButtonTitle, for: .normal)
+            editButton.isEnabled = true
+            name!.textColor = enabledColorForName
+        }
+        
     }
 }
 
@@ -36,24 +64,26 @@ class RootViewController: UITableViewController {
     // Overriden methods for UITableViewController protocol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 800.0)
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 800.0)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tasksList = TasksList.sharedTasksList
         let  preferredTableViewFont =  UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
     }
     
-    //Datasource methods for table view
     
-    override
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "All your tasks"
-    }
+    //Datasource methods for table view
 
     override
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,9 +108,12 @@ class RootViewController: UITableViewController {
         //cell.name?.font = UIFont(name: "Arial", size: cellPointSize)
         if tasksList.tasks[indexPath.row].completed {
             cell.completed?.isOn = false
-            cell.name?.textColor = UIColor(red: rgbHexaComponentToDecimal("E1"),
-                                           green: rgbHexaComponentToDecimal("E2"),
-                                           blue: rgbHexaComponentToDecimal("E1"), alpha: 1)
+            cell.completed?.isEnabled = false
+            cell.editButton?.isEnabled = false
+            cell.editButton?.setTitleColor(.gray, for: .normal)
+            cell.name?.textColor = UIColor(red: Utils.rgbHexaComponentToDecimal("E1"),
+                                           green: Utils.rgbHexaComponentToDecimal("E2"),
+                                           blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
         }
         
         return cell
@@ -104,18 +137,6 @@ class RootViewController: UITableViewController {
 //            listVC.showsFavourites = true
 //        }
 //    }
-    
-    // Private functions
-    
-    // This function convert a RGB component to standarized CG value
-    private func rgbHexaComponentToDecimal(_ hexa:String) -> CGFloat{
-        if let decimal = UInt8(hexa, radix: 16) {
-            return CGFloat(decimal) / 255.0
-        }
-        return 0
-    }
-    
-    
     
     
 }

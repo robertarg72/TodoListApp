@@ -1,10 +1,14 @@
-//
-//  Constants.swift
-//  TodoListApp
-//
-//  Created by Robert Argume on 2017-12-20.
-//  Copyright © 2017 Robert Argume. All rights reserved.
-//
+/*
+ * Constants.swift
+ * Project: Assignment 2 - Todo List App
+ * Students:
+ *              Ling Bao        300901785
+ *              Robert Argume   300949529
+ * Date: Dec 20, 2017
+ * Description:
+ *              Class with Constant values to maintain order and avoid errors in the project
+ * Version: 0.1
+ */
 
 import Foundation
 
