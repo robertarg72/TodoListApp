@@ -1,5 +1,5 @@
 /*
- * ViweController.swift
+ * RootViewController.swift
  * Project: Assignment 2 - Todo List App
  * Students:
  *              Ling Bao        300901785
@@ -80,6 +80,56 @@ class RootViewController: UITableViewController {
         let  preferredTableViewFont =  UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: Utils.rgbHexaComponentToDecimal("DD"),
+                                                               green: Utils.rgbHexaComponentToDecimal("2D"),
+                                                               blue: Utils.rgbHexaComponentToDecimal("01"), alpha: 1)
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        self.navigationController?.navigationBar.topItem?.title = "Tasks List"
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
+        
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 26, weight: .semibold)
+            
+        ]
+        
+        navigationController?.navigationBar.titleTextAttributes = attrs
+        navigationController?.navigationBar.setTitleVerticalPositionAdjustment(CGFloat(-10), for: UIBarMetrics.default)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
+        
+        // For using NSAttributedString
+//        let styledText = NSMutableAttributedString(string: text);
+//        let attributes = [
+//            NSFontAttributeName: UIFont.boldSystemFont(ofSize: labelText.font.pointSize),
+//            NSForegroundColorAttributeName: UIColor.green,
+//            NSBackgroundColorAttributeName: UIColor.red,
+//            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+//            NSShadowAttributeName: myShadow
+//            ] as [String : Any]
+//
+//
+//
+//        // Because we first casted as NSString, then we get a NSRange
+//        let rangeName = (text as NSString).range(of: title)
+//        styledText.setAttributes(attributes, range: rangeName)
+//
+//        // Second option: First we create a NSRange from the Swift range and then to set the attributes
+//        //        let rangeName = (text as String).range(of: title)
+//        //        let rangeNameAsNSRange = NSRange(rangeName!, in: text)
+//        //        styledText.setAttributes(attributes, range: rangeNameAsNSRange)
+//
+//        labelText.attributedText = styledText
+//
+        
+        
+        
+       
     }
     
     

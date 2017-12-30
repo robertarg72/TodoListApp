@@ -78,10 +78,20 @@ class TasksList {
             "Enterprise Milestone 2",
             "Android Assignment 3",
             "Web Technologies M1",
+            "UI/UX M2 Design prototype",
+            "iOS Assignment 2 Design",
+            "Enterprise Milestone 2",
+            "Android Assignment 3",
+            "Web Technologies M1",
             "UI/UX M2 Design prototype"
         ]
         
         let descriptions = [
+        "iOS Assignment 2 Design, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Enterprise Milestone 2, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Android Assignment 3, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "Web Technologies M1, we need to create a Xcode project and implement designed screens as well as basic navigation.",
+        "UI/UX M2 Design prototype, we need to create a Xcode project and implement designed screens as well as basic navigation.",
         "iOS Assignment 2 Design, we need to create a Xcode project and implement designed screens as well as basic navigation.",
         "Enterprise Milestone 2, we need to create a Xcode project and implement designed screens as well as basic navigation.",
         "Android Assignment 3, we need to create a Xcode project and implement designed screens as well as basic navigation.",
