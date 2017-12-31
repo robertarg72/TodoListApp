@@ -1,5 +1,5 @@
 /*
- * RootViewController.swift
+ * RootViewController2.swift
  * Project: Assignment 2 - Todo List App
  * Students:
  *              Ling Bao        300901785
@@ -55,17 +55,20 @@ class TaskViewCell: UITableViewCell {
 }
 
 // Main controller for first table view showing list of taks
-class RootViewController: UITableViewController {
+class RootViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     // Private variables
     private var cellPointSize: CGFloat!
     private var tasksList: TasksList!
     private static let taskCell = "TaskName"
+    @IBOutlet weak var todoListTableView: UITableView!
     
     // Overriden methods for UITableViewController protocol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 800.0)
-        tableView.reloadData()
+        //tableView.reloadData()
+        todoListTableView!.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,15 +82,16 @@ class RootViewController: UITableViewController {
         tasksList = TasksList.sharedTasksList
         let  preferredTableViewFont =  UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
-        tableView.estimatedRowHeight = cellPointSize
+        //tableView.estimatedRowHeight = cellPointSize
+        todoListTableView!.estimatedRowHeight = cellPointSize
         
         navigationController?.navigationBar.barTintColor = UIColor(red: Utils.rgbHexaComponentToDecimal("DD"),
                                                                green: Utils.rgbHexaComponentToDecimal("2D"),
                                                                blue: Utils.rgbHexaComponentToDecimal("01"), alpha: 1)
         
-        navigationController?.navigationBar.prefersLargeTitles = false
+        //navigationController?.navigationBar.prefersLargeTitles = false
         
-        self.navigationController?.navigationBar.topItem?.title = "Tasks List"
+        //self.navigationController?.navigationBar.topItem?.title = "Tasks List"
         navigationController?.navigationBar.tintColor = UIColor.white
         
         
@@ -100,59 +104,33 @@ class RootViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = attrs
         navigationController?.navigationBar.setTitleVerticalPositionAdjustment(CGFloat(-10), for: UIBarMetrics.default)
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        
-        
-        // For using NSAttributedString
-//        let styledText = NSMutableAttributedString(string: text);
-//        let attributes = [
-//            NSFontAttributeName: UIFont.boldSystemFont(ofSize: labelText.font.pointSize),
-//            NSForegroundColorAttributeName: UIColor.green,
-//            NSBackgroundColorAttributeName: UIColor.red,
-//            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-//            NSShadowAttributeName: myShadow
-//            ] as [String : Any]
-//
-//
-//
-//        // Because we first casted as NSString, then we get a NSRange
-//        let rangeName = (text as NSString).range(of: title)
-//        styledText.setAttributes(attributes, range: rangeName)
-//
-//        // Second option: First we create a NSRange from the Swift range and then to set the attributes
-//        //        let rangeName = (text as String).range(of: title)
-//        //        let rangeNameAsNSRange = NSRange(rangeName!, in: text)
-//        //        styledText.setAttributes(attributes, range: rangeNameAsNSRange)
-//
-//        labelText.attributedText = styledText
-//
-        
-        
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil,  action: nil)
        
     }
-    
+  
     
     //Datasource methods for table view
 
-    override
+    //override
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksList.tasks.count
     }
-    
-    override
+
+    //override
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return tasksList.tasks[indexPath.row].completed ? nil : indexPath
     }
-    
-    override
+
+    //override
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).pointSize * 5
     }
-    
-    override
+
+    //override
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: RootViewController2.taskCell, for: indexPath) as! TaskViewCell2
+
+        let cell = todoListTableView!.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
         
         cell.name?.text = tasksList.tasks[indexPath.row].name
         //cell.name?.font = UIFont(name: "Arial", size: cellPointSize)
@@ -165,7 +143,7 @@ class RootViewController: UITableViewController {
                                            green: Utils.rgbHexaComponentToDecimal("E2"),
                                            blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
         }
-        
+
         return cell
     }
     
