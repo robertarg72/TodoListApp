@@ -7,6 +7,7 @@
  * Date: Dec 20, 2017
  * Description: 
  *              Class to describe and manage todo tasks, as a collections of tasks
+ *              The list of tasks is stored in User Prefences Storage
  * Version: 0.1
  */
 
