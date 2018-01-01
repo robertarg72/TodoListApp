@@ -13,7 +13,10 @@ import UIKit
 
 class EditTaskViewController: UIViewController {
 
+    // Local variables
     var selectedTask: Task! = nil
+    
+    // OUTLETS
     
     @IBOutlet weak var taskNameTextField: UITextField!
     
@@ -22,6 +25,9 @@ class EditTaskViewController: UIViewController {
     @IBOutlet weak var taskStatusLabel: UILabel!
     
     @IBOutlet weak var taskStatusSwitch: UISwitch!
+    
+    
+    // OVERRIDE METHODS FOR UIVIEWCONTROLLER PROTOCOL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +40,9 @@ class EditTaskViewController: UIViewController {
             taskStatusSwitch.isOn = !selectedTask.completed
         }
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // ACTIONS
     
     @IBAction func onSwitchValueChanged(_ sender: UISwitch) {
     }

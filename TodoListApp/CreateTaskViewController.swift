@@ -29,15 +29,10 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // FUNCTION FOR IMPLEMENTING UITEXVIEWDELEGATE PROTOCOL
-    // Delegate Functions for adding a place holder for the Task Description Text View
+    
+    // Delegate Functions for removing the place holder when user start typing in the text view
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         if (textView.text == descriptionPlaceHolder)
@@ -48,6 +43,7 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
         textView.becomeFirstResponder()
     }
     
+    // Delegate Functions for adding a place holder when there is no focus on the text view and user did not typed in data
     func textViewDidEndEditing(_ textView: UITextView)
     {
         if (textView.text == "")
@@ -67,6 +63,7 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onCreateButtonPressed(_ sender: UIButton) {
+        //Create new task and save it using the TaskList api
         let newTask = Task(taskNameTextField.text!, taskDescriptionTextView.text!, false)
         TasksList.sharedTasksList.addTask(aTask: newTask)
         

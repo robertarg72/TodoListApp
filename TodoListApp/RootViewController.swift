@@ -14,13 +14,15 @@
 
 import UIKit
 
-// Helper class to manage a Custom Cell with switch view and buttton
+// Helper class to manage a Custom Cell with switch view and buttton inside
 class TaskViewCell: UITableViewCell {
     
+    // OUTLETS
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var completed: UISwitch!
     @IBOutlet weak var editButton: UIButton!
     
+    // ACTIONS
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
         
     }
@@ -60,7 +62,9 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private static let taskCell = "TaskName"
     @IBOutlet weak var todoListTableView: UITableView!
     
-    // Overriden methods for UITableViewController protocol
+    
+    // OVERRIDDE FUNCTIONS FOR UIVIEWCONTROLLER PROTOCOL
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 800.0)
@@ -102,29 +106,24 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
   
     
-    //Datasource methods for table view
+    // FUNCTIONS FOR TABLE VIEW FOR IMPLEMENTING DATASOURCE AND DELEGATE PROTOCOLS
 
-    //override
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksList.tasks.count
     }
-
-    //override
+   
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return tasksList.tasks[indexPath.row].completed ? nil : indexPath
     }
 
-    //override
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).pointSize * 5
     }
 
-    //override
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = todoListTableView!.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
         
         cell.name?.text = tasksList.tasks[indexPath.row].name
-        //cell.name?.font = UIFont(name: "Arial", size: cellPointSize)
         if tasksList.tasks[indexPath.row].completed {
             cell.completed?.isOn = false
             cell.completed?.isEnabled = false
@@ -141,7 +140,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    // Segue connection method
+    // SEGUE CONNECTION METHOD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

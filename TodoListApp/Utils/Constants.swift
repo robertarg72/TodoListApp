@@ -4,10 +4,10 @@
  * Students:
  *              Ling Bao        300901785
  *              Robert Argume   300949529
- * Date: Dec 20, 2017
+ * Date: Jan 3, 2018
  * Description:
  *              Class with Constant values to maintain order and avoid errors in the project
- * Version: 0.1
+ * Version: 0.2
  */
 
 import Foundation
@@ -32,5 +32,6 @@ struct Constants {
         static let CompletedTask = "Completed Task"
         static let DescriptionPlaceHolder = "Enter a description ..."
         static let EditTaskSegueIdentifier = "EditScreenSegue"
+        static let UserDefaultsStorageKey = "tasks"
     }
 }

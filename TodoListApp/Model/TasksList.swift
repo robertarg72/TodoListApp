@@ -4,11 +4,12 @@
  * Students:
  *              Ling Bao        300901785
  *              Robert Argume   300949529
- * Date: Dec 20, 2017
+ * Date: Jan 3, 2018
  * Description: 
  *              Class to describe and manage todo tasks, as a collections of tasks
- *              The list of tasks is stored in User Prefences Storage
- * Version: 0.1
+ *              The list of tasks is stored in User Prefences Storage by using the
+ *              UsersDefaultsArchive class. 
+ * Version: 0.2
  */
 
 import Foundation
@@ -24,7 +25,7 @@ class TasksList {
         //let storedTasks = defaults.object(forKey: "tasks") as? [Task]
         //tasks = storedTasks != nil ? storedTasks! : []
         
-        persistence = UserDefaultsArchive("tasks")
+        persistence = UserDefaultsArchive(Constants.Text.UserDefaultsStorageKey)
         let storedTasks = persistence.loadCollection() as? [Task]
         tasks = storedTasks != nil ? storedTasks! : []
         

@@ -4,9 +4,11 @@
  * Students:
  *              Ling Bao        300901785
  *              Robert Argume   300949529
- * Date: Dec 20, 2017
+ * Date: Jan 3, 2018
  * Description:
  *              Class to describe and manage a single todo task
+ *              Implements methods for Equatable, NSObject and NSCoding protocols
+ *              Allows to compare 2 instances and save this custom object in Users Defaults
  * Version: 0.2
  */
 
