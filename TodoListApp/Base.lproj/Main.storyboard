@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rBg-cp-auB">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,34 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test-->
+        <!--Tasks List-->
         <scene sceneID="ult-Sy-3aI">
             <objects>
-                <viewController title="Test" id="AAa-Hu-YD3" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Tasks List" id="AAa-Hu-YD3" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0R-bd-BKF">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="348"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAt-Qv-DUb">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="296"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskName" id="a5w-xf-N4r" customClass="TaskViewCell" customModule="TodoListApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="736" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a5w-xf-N4r" id="gEZ-1c-K2S">
-                                            <rect key="frame" x="0.0" y="0.0" width="736" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-ut-n2C">
-                                                    <rect key="frame" x="13" y="6.6666666666666661" width="51" height="31"/>
+                                                    <rect key="frame" x="13" y="6.5" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.86666666670000003" green="0.1764705882" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="onSwitchViewChange:" destination="a5w-xf-N4r" eventType="valueChanged" id="1vb-dJ-faS"/>
                                                     </connections>
                                                 </switch>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-sE-GpX">
-                                                    <rect key="frame" x="685" y="5.6666666666666679" width="31" height="33"/>
+                                                    <rect key="frame" x="269" y="5.5" width="31" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <state key="normal" title="Edit">
                                                         <color key="titleColor" red="0.63921568630000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPf-AQ-MEk">
-                                <rect key="frame" x="335" y="279" width="66" height="66"/>
+                                <rect key="frame" x="127" y="313" width="66" height="66"/>
                                 <state key="normal" image="Create New Task Button"/>
                                 <connections>
                                     <segue destination="HeT-sN-GN0" kind="show" id="3u0-LZ-uJH"/>
@@ -121,17 +121,17 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <viewController id="4ue-aM-1Aw" customClass="EditTaskViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xw-fb-wlt">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="348"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaR-Ac-5CJ">
-                                <rect key="frame" x="34" y="12" width="89" height="21"/>
+                                <rect key="frame" x="20" y="24" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.51764705882352935" green="0.51764705882352935" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCX-67-0SS">
-                                <rect key="frame" x="34" y="79" width="132" height="21"/>
+                                <rect key="frame" x="20" y="112" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.51764705882352935" green="0.51764705882352935" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -142,6 +142,9 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <state key="normal" title="Cancel" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="xJt-ik-fm6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEd-6F-Odn">
                                 <rect key="frame" x="212.5" y="318" width="84.5" height="44"/>
@@ -149,6 +152,9 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <state key="normal" title="Update" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onUpdateButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="3Aj-7r-wjk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvF-KE-B5y">
                                 <rect key="frame" x="116.5" y="318" width="85" height="44"/>
@@ -156,34 +162,46 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <state key="normal" title="Delete" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onDeleteButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="eSX-G0-Vnh"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlS-Gk-8Zm">
-                                <rect key="frame" x="611" y="247" width="51" height="31"/>
+                                <rect key="frame" x="238" y="264" width="51" height="31"/>
                                 <color key="onTintColor" red="0.8666666666666667" green="0.1764705882352941" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onSwitchValueChanged:" destination="4ue-aM-1Aw" eventType="valueChanged" id="V2E-iM-xwD"/>
+                                </connections>
                             </switch>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-7E-BPo">
-                                <rect key="frame" x="35" y="102" width="665" height="129"/>
+                                <rect key="frame" x="20" y="141" width="279" height="115"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-OL-kca">
-                                <rect key="frame" x="65" y="294" width="180" height="44"/>
+                                <rect key="frame" x="20" y="204" width="130" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="xfL-sD-Peu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23r-DG-86w">
-                                <rect key="frame" x="277" y="294" width="180" height="44"/>
+                                <rect key="frame" x="175" y="204" width="130" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Delete" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onDeleteButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="LYq-c2-uSd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Task" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpY-xf-dfH">
-                                <rect key="frame" x="459" y="253" width="125" height="21"/>
+                                <rect key="frame" x="91" y="269" width="125" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="6Kq-4N-Ovh"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="FFZ-1Z-bCg"/>
@@ -216,17 +234,20 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UI/UX Design prototype" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4US-PV-z7u">
-                                <rect key="frame" x="36" y="37" width="666" height="30"/>
+                                <rect key="frame" x="20" y="53" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-jE-tYV">
-                                <rect key="frame" x="488" y="294" width="180" height="44"/>
+                                <rect key="frame" x="330" y="204" width="130" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Update" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onUpdateButtonPressed:" destination="4ue-aM-1Aw" eventType="touchUpInside" id="GEv-Xe-Ciw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -351,15 +372,6 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <exclude reference="UpN-jE-tYV"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="E0f-K0-TYL"/>
-                                <exclude reference="YFP-Ac-wFs"/>
-                                <exclude reference="Gul-bK-O7h"/>
-                                <exclude reference="Jcb-CY-5qn"/>
-                                <exclude reference="O12-wo-XHg"/>
-                                <exclude reference="1U7-8V-wGj"/>
-                                <exclude reference="HrU-1t-p0p"/>
-                                <exclude reference="sBS-0U-v0Z"/>
-                                <exclude reference="xvO-ZU-G6G"/>
                                 <exclude reference="1gc-LN-w7b"/>
                                 <exclude reference="26N-r6-rrp"/>
                                 <exclude reference="3dE-yN-FSL"/>
@@ -423,6 +435,15 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <exclude reference="l4z-u8-Beb"/>
                                 <exclude reference="pmH-RH-CPx"/>
                                 <exclude reference="tdp-7y-Pmh"/>
+                                <exclude reference="E0f-K0-TYL"/>
+                                <exclude reference="YFP-Ac-wFs"/>
+                                <exclude reference="Gul-bK-O7h"/>
+                                <exclude reference="Jcb-CY-5qn"/>
+                                <exclude reference="O12-wo-XHg"/>
+                                <exclude reference="1U7-8V-wGj"/>
+                                <exclude reference="HrU-1t-p0p"/>
+                                <exclude reference="sBS-0U-v0Z"/>
+                                <exclude reference="xvO-ZU-G6G"/>
                                 <exclude reference="0Ti-wP-CjQ"/>
                                 <exclude reference="6FG-yK-jJw"/>
                                 <exclude reference="9cu-d8-Fi6"/>
@@ -556,15 +577,6 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <include reference="XvF-KE-B5y"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="E0f-K0-TYL"/>
-                                <include reference="YFP-Ac-wFs"/>
-                                <include reference="Gul-bK-O7h"/>
-                                <include reference="Jcb-CY-5qn"/>
-                                <include reference="O12-wo-XHg"/>
-                                <include reference="1U7-8V-wGj"/>
-                                <include reference="HrU-1t-p0p"/>
-                                <include reference="sBS-0U-v0Z"/>
-                                <include reference="xvO-ZU-G6G"/>
                                 <include reference="1gc-LN-w7b"/>
                                 <include reference="5cg-bE-MRs"/>
                                 <include reference="Axd-tp-Mm8"/>
@@ -582,6 +594,15 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <include reference="hf7-NZ-E6i"/>
                                 <include reference="oBP-Sh-Oeg"/>
                                 <include reference="xWn-DH-dXI"/>
+                                <include reference="E0f-K0-TYL"/>
+                                <include reference="YFP-Ac-wFs"/>
+                                <include reference="Gul-bK-O7h"/>
+                                <include reference="Jcb-CY-5qn"/>
+                                <include reference="O12-wo-XHg"/>
+                                <include reference="1U7-8V-wGj"/>
+                                <include reference="HrU-1t-p0p"/>
+                                <include reference="sBS-0U-v0Z"/>
+                                <include reference="xvO-ZU-G6G"/>
                                 <include reference="2K2-PZ-ghu"/>
                                 <include reference="pcx-Sm-W3c"/>
                                 <include reference="Jo6-N2-fmc"/>
@@ -606,6 +627,13 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
 ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
 </string>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskDescriptionTextView" destination="Uvw-7E-BPo" id="fV2-SC-g1L"/>
+                        <outlet property="taskDescriptionView" destination="Uvw-7E-BPo" id="8w2-q1-cSw"/>
+                        <outlet property="taskNameTextField" destination="4US-PV-z7u" id="yDe-8m-PzU"/>
+                        <outlet property="taskNameView" destination="4US-PV-z7u" id="2Hh-jF-SeG"/>
+                        <outlet property="taskStatusLabel" destination="RpY-xf-dfH" id="ala-4e-Nfm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBj-dX-xzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -616,7 +644,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <navigationController id="rBg-cp-auB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1xs-pn-r2Q">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="32"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
@@ -634,29 +662,29 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <viewController title="Create New Task" id="HeT-sN-GN0" customClass="CreateTaskViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkY-AU-rQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="348"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3c-Yd-cD6">
-                                <rect key="frame" x="35" y="14" width="89" height="20.666666666666671"/>
+                                <rect key="frame" x="20" y="29" width="98" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UI/UX Design prototype" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jhh-QN-2Bz">
-                                <rect key="frame" x="35" y="44" width="665" height="30"/>
+                                <rect key="frame" x="20" y="58.5" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgg-8z-kFu">
-                                <rect key="frame" x="35" y="96" width="132" height="21"/>
+                                <rect key="frame" x="20" y="119.5" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-WQ-UDL">
-                                <rect key="frame" x="35" y="123.33333333333336" width="672" height="135.66666666666663"/>
+                                <rect key="frame" x="20" y="153.5" width="279" height="141.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="4fr-No-ydn"/>
@@ -676,18 +704,24 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxP-OB-JbS">
-                                <rect key="frame" x="141" y="289" width="180" height="44"/>
+                                <rect key="frame" x="82" y="204" width="130" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonPressed:" destination="HeT-sN-GN0" eventType="touchUpInside" id="iGA-wn-eig"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61X-1d-PZr">
-                                <rect key="frame" x="409" y="289" width="180" height="44"/>
+                                <rect key="frame" x="268" y="204" width="130" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreateButtonPressed:" destination="HeT-sN-GN0" eventType="touchUpInside" id="F0d-hu-RMS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bj-1Q-K9w">
                                 <rect key="frame" x="186.5" y="318" width="90" height="44"/>
@@ -695,6 +729,9 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <state key="normal" title="Create" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreateButtonPressed:" destination="HeT-sN-GN0" eventType="touchUpInside" id="KOf-ft-cMA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shF-Of-22A">
                                 <rect key="frame" x="45" y="318" width="90" height="44"/>
@@ -702,6 +739,9 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <state key="normal" title="Cancel" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancelButtonPressed:" destination="HeT-sN-GN0" eventType="touchUpInside" id="gx5-qU-POm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -783,11 +823,6 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <exclude reference="shF-Of-22A"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ae9-Cb-p60"/>
-                                <exclude reference="bcC-VZ-oTQ"/>
-                                <exclude reference="685-hV-LrU"/>
-                                <exclude reference="c1x-A2-BZW"/>
-                                <exclude reference="ndl-Xj-sKb"/>
                                 <exclude reference="0qP-Aa-X0j"/>
                                 <exclude reference="0rX-ZL-xiN"/>
                                 <exclude reference="2ND-Ca-nJz"/>
@@ -839,6 +874,11 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <exclude reference="hqL-je-IH1"/>
                                 <exclude reference="lJ5-aE-pGy"/>
                                 <exclude reference="oNw-l7-WpV"/>
+                                <exclude reference="ae9-Cb-p60"/>
+                                <exclude reference="bcC-VZ-oTQ"/>
+                                <exclude reference="685-hV-LrU"/>
+                                <exclude reference="c1x-A2-BZW"/>
+                                <exclude reference="ndl-Xj-sKb"/>
                                 <exclude reference="50n-Cv-0ly"/>
                                 <exclude reference="HzC-Ex-RNQ"/>
                                 <exclude reference="Lt2-Ij-Iwf"/>
@@ -913,11 +953,6 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <include reference="shF-Of-22A"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ae9-Cb-p60"/>
-                                <include reference="bcC-VZ-oTQ"/>
-                                <include reference="685-hV-LrU"/>
-                                <include reference="c1x-A2-BZW"/>
-                                <include reference="ndl-Xj-sKb"/>
                                 <include reference="Eaw-rV-yGg"/>
                                 <include reference="J8I-ye-ogM"/>
                                 <include reference="RUX-Qt-HUy"/>
@@ -933,6 +968,11 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <include reference="oye-IN-Tdb"/>
                                 <include reference="1aX-g1-NYd"/>
                                 <include reference="3iJ-uw-c6o"/>
+                                <include reference="ae9-Cb-p60"/>
+                                <include reference="bcC-VZ-oTQ"/>
+                                <include reference="685-hV-LrU"/>
+                                <include reference="c1x-A2-BZW"/>
+                                <include reference="ndl-Xj-sKb"/>
                             </mask>
                         </variation>
                     </view>
@@ -953,6 +993,10 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
 ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
 </string>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskNameTextField" destination="Jhh-QN-2Bz" id="33s-0h-qkh"/>
+                        <outlet property="taskNameTextView" destination="D3Z-WQ-UDL" id="3LO-yb-i8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hp-xd-rcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

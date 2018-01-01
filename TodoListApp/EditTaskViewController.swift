@@ -13,6 +13,12 @@ import UIKit
 
 class EditTaskViewController: UIViewController {
 
+    @IBOutlet weak var taskNameTextField: UITextField!
+    
+    @IBOutlet weak var taskDescriptionTextView: UITextView!
+    
+    @IBOutlet weak var taskStatusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,5 +28,15 @@ class EditTaskViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onSwitchValueChanged(_ sender: UISwitch) {
+    }
+    
+    @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func onUpdateButtonPressed(_ sender: UIButton) {
+    }
 }
