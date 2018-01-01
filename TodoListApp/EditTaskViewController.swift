@@ -32,6 +32,21 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        
+        //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        //let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksList") as! RootViewController
+        
+        // To present next view controller on top of the current controller
+        //self.present(nextViewController, animated:true, completion:nil)
+        
+        // To push next view controller to the navigation stack. It shows a back button
+        //self.navigationController?.pushViewController(nextViewController, animated: true)
+        
+        // Pops the current view controller, previous controller shows up
+        self.navigationController?.popViewController(animated:true)
+        
+        // This will performs a direct jump to root view controller
+        //self.navigationController?.popToRootViewController(animated:true)
     }
     
     @IBAction func onDeleteButtonPressed(_ sender: UIButton) {

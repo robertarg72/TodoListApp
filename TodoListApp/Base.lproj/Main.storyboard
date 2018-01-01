@@ -13,7 +13,7 @@
         <!--Tasks List-->
         <scene sceneID="ult-Sy-3aI">
             <objects>
-                <viewController title="Tasks List" id="AAa-Hu-YD3" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasksList" title="Tasks List" id="AAa-Hu-YD3" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0R-bd-BKF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -629,9 +629,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                     </navigationItem>
                     <connections>
                         <outlet property="taskDescriptionTextView" destination="Uvw-7E-BPo" id="fV2-SC-g1L"/>
-                        <outlet property="taskDescriptionView" destination="Uvw-7E-BPo" id="8w2-q1-cSw"/>
                         <outlet property="taskNameTextField" destination="4US-PV-z7u" id="yDe-8m-PzU"/>
-                        <outlet property="taskNameView" destination="4US-PV-z7u" id="2Hh-jF-SeG"/>
                         <outlet property="taskStatusLabel" destination="RpY-xf-dfH" id="ala-4e-Nfm"/>
                     </connections>
                 </viewController>
@@ -671,7 +669,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UI/UX Design prototype" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jhh-QN-2Bz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a name ..." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jhh-QN-2Bz">
                                 <rect key="frame" x="20" y="58.5" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -683,13 +681,12 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 <color key="textColor" red="0.51764705879999995" green="0.51764705879999995" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-WQ-UDL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a descripton ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-WQ-UDL">
                                 <rect key="frame" x="20" y="153.5" width="279" height="141.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="4fr-No-ydn"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">

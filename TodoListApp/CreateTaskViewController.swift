@@ -12,6 +12,10 @@ import UIKit
 
 class CreateTaskViewController: UIViewController {
 
+    @IBOutlet weak var taskNameTextField: UITextField!
+    
+    @IBOutlet weak var taskNameTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,4 +27,11 @@ class CreateTaskViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        // Pops the current view controller, previous controller shows up
+        self.navigationController?.popViewController(animated:true)
+    }
+    
+    @IBAction func onCreateButtonPressed(_ sender: UIButton) {
+    }
 }
