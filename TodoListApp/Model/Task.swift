@@ -34,7 +34,9 @@ class Task : Equatable {
     }
     
     static func ==(lhs: Task, rhs: Task) -> Bool {
-        return lhs.id == rhs.id
+        //return lhs.id == rhs.id
+        // Two tasks are the same if the name is the same. Case insensitive.
+        return lhs.name.caseInsensitiveCompare(rhs.name) == ComparisonResult.orderedSame
     }
     
 }

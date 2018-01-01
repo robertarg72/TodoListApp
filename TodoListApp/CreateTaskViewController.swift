@@ -60,10 +60,11 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     // ACTION FUNCTIONS
     
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
-        // Pops the current view controller, previous controller shows up
+        // Pops current view controller out from the nav stack, previous controller shows up
         self.navigationController?.popViewController(animated:true)
     }
     
     @IBAction func onCreateButtonPressed(_ sender: UIButton) {
+        
     }
 }
