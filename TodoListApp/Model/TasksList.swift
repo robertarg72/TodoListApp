@@ -17,10 +17,15 @@ import UIKit
 class TasksList {
     static let sharedTasksList = TasksList()
     private(set) var tasks:[Task]
+    private var persistence: UserDefaultsArchive
     
     init(){
-        let defaults = UserDefaults.standard
-        let storedTasks = defaults.object(forKey: "tasks") as? [Task]
+        //let defaults = UserDefaults.standard
+        //let storedTasks = defaults.object(forKey: "tasks") as? [Task]
+        //tasks = storedTasks != nil ? storedTasks! : []
+        
+        persistence = UserDefaultsArchive("tasks")
+        let storedTasks = persistence.loadCollection() as? [Task]
         tasks = storedTasks != nil ? storedTasks! : []
         
         if tasks.count == 0 {
@@ -33,8 +38,12 @@ class TasksList {
         
         if let currentTask = aTask {
             if !tasks.contains(currentTask) {
-                currentTask.id = tasks.endIndex
-                tasks.append(currentTask)
+                //currentTask.id = tasks.endIndex
+                //tasks.append(currentTask)
+                
+                // Append task at the beggining of the array
+                tasks.insert(currentTask, at: 0)
+                currentTask.id = 0
                 saveTask()
             }
         }
@@ -67,9 +76,11 @@ class TasksList {
    
     // This method saves task to the user preferences file
     private func saveTask() {
-        let defaults = UserDefaults.standard
-        defaults.set(tasks, forKey: "tasks")
-        defaults.synchronize()
+//        let defaults = UserDefaults.standard
+//        defaults.set(tasks, forKey: "tasks")
+//        defaults.synchronize()
+        
+        persistence.saveCollection(collection: tasks)
     }
     
     // This  method generates test data to show in the app

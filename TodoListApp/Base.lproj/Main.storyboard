@@ -996,8 +996,8 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
 </string>
                     </navigationItem>
                     <connections>
+                        <outlet property="taskDescriptionTextView" destination="D3Z-WQ-UDL" id="6Gl-oa-muo"/>
                         <outlet property="taskNameTextField" destination="Jhh-QN-2Bz" id="33s-0h-qkh"/>
-                        <outlet property="taskNameTextView" destination="D3Z-WQ-UDL" id="3LO-yb-i8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Hp-xd-rcY" userLabel="First Responder" sceneMemberID="firstResponder"/>

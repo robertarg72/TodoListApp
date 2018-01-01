@@ -8,6 +8,7 @@
  * Description: Form Screen to type in task name and description for the new task
  * Version: 0.2
  */
+import Foundation
 import UIKit
 
 class CreateTaskViewController: UIViewController, UITextViewDelegate {
@@ -19,7 +20,8 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var taskNameTextField: UITextField!
     
-    @IBOutlet weak var taskNameTextView: UITextView!
+    
+    @IBOutlet weak var taskDescriptionTextView: UITextView!
     
     
     // OVERRIDDE FUNCTIONS FOR UIVIEWCONTROLLER PROTOCOL
@@ -65,6 +67,10 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onCreateButtonPressed(_ sender: UIButton) {
+        let newTask = Task(taskNameTextField.text!, taskDescriptionTextView.text!, false)
+        TasksList.sharedTasksList.addTask(aTask: newTask)
         
+        // Pops current view controller out from the nav stack, previous controller shows up
+        self.navigationController?.popViewController(animated:true)
     }
 }
