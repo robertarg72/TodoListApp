@@ -10,23 +10,56 @@
  */
 import UIKit
 
-class CreateTaskViewController: UIViewController {
+class CreateTaskViewController: UIViewController, UITextViewDelegate {
 
+    private let descriptionPlaceHolder: String = "Enter a description ..."
+    
     @IBOutlet weak var taskNameTextField: UITextField!
     
     @IBOutlet weak var taskNameTextView: UITextView!
     
+    // OVERRIDDE FUNCTIONS FOR UIVIEWCONTROLLER PROTOCOL
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        let myUITextView = UITextView.init()
+//        myUITextView.delegate = self
+//        myUITextView.text = descriptionPlaceHolder
+//        myUITextView.textColor = .lightGray
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // FUNCTION FOR IMPLEMENTING UITEXVIEWDELEGATE PROTOCOL
+    // Delegate Functions for adding a place holder for the Task Description Text View
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        if (textView.text == descriptionPlaceHolder)
+        {
+            textView.text = ""
+            textView.textColor = .black
+        }
+        textView.becomeFirstResponder() //Optional
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if (textView.text == "")
+        {
+            textView.text = descriptionPlaceHolder
+            textView.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
+    }
 
+    
+    // ACTION FUNCTIONS
+    
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
         // Pops the current view controller, previous controller shows up
         self.navigationController?.popViewController(animated:true)
