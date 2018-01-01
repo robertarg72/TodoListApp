@@ -26,4 +26,11 @@ struct Constants {
         static let TextOnPrimary = "0xFFFFFF"
         static let TextOnSecondary = "0x616161"
     }
+    
+    struct Text {
+        static let ActiveTask = "Active Task"
+        static let CompletedTask = "Completed Task"
+        static let DescriptionPlaceHolder = "Enter a description ..."
+        static let EditTaskSegueIdentifier = "EditScreenSegue"
+    }
 }

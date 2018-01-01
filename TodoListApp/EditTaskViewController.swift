@@ -13,14 +13,26 @@ import UIKit
 
 class EditTaskViewController: UIViewController {
 
+    var selectedTask: Task! = nil
+    
     @IBOutlet weak var taskNameTextField: UITextField!
     
     @IBOutlet weak var taskDescriptionTextView: UITextView!
     
     @IBOutlet weak var taskStatusLabel: UILabel!
     
+    @IBOutlet weak var taskStatusSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Fill selected task data to the corresponding views
+        if selectedTask != nil {
+            taskNameTextField.text = selectedTask.name
+            taskDescriptionTextView.text = selectedTask.notes
+            taskStatusLabel.text = selectedTask.completed ? Constants.Text.CompletedTask : Constants.Text.ActiveTask
+            taskStatusSwitch.isOn = !selectedTask.completed
+        }
     }
 
     override func didReceiveMemoryWarning() {

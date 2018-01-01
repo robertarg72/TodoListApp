@@ -44,7 +44,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="onEditButtonPressed:" destination="a5w-xf-N4r" eventType="touchUpInside" id="S80-0T-Gmp"/>
-                                                        <segue destination="4ue-aM-1Aw" kind="show" id="fhC-GH-aw9"/>
+                                                        <segue destination="4ue-aM-1Aw" kind="show" identifier="EditScreenSegue" id="fhC-GH-aw9"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaE-YW-qSN">
@@ -631,6 +631,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                         <outlet property="taskDescriptionTextView" destination="Uvw-7E-BPo" id="fV2-SC-g1L"/>
                         <outlet property="taskNameTextField" destination="4US-PV-z7u" id="yDe-8m-PzU"/>
                         <outlet property="taskStatusLabel" destination="RpY-xf-dfH" id="ala-4e-Nfm"/>
+                        <outlet property="taskStatusSwitch" destination="vlS-Gk-8Zm" id="UHr-nL-OEL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBj-dX-xzd" userLabel="First Responder" sceneMemberID="firstResponder"/>

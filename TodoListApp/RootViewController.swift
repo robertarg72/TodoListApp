@@ -21,14 +21,11 @@ class TaskViewCell: UITableViewCell {
     @IBOutlet weak var completed: UISwitch!
     @IBOutlet weak var editButton: UIButton!
     
-    
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
         
     }
     
     @IBAction func onSwitchViewChange(_ sender: UISwitch) {
-        
-        
         if( completed!.isOn ) {
             completed!.isOn = false
             editButton.isEnabled = false
@@ -51,7 +48,6 @@ class TaskViewCell: UITableViewCell {
             editButton.isEnabled = true
             name!.textColor = enabledColorForName
         }
-        
     }
 }
 
@@ -138,28 +134,27 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                            green: Utils.rgbHexaComponentToDecimal("E2"),
                                            blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
         }
-
+        
+        // Set button tag to the cell order row, so we have that info for the segue action
+        cell.editButton?.tag = indexPath.row
+        
         return cell
     }
     
     // Segue connection method
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let indexPath = tableView.indexPath(for: sender as! UITableViewCell)!
-//        let listVC = segue.destination as! FontListViewController
-//
-//        if indexPath.section == 0 {
-//            let familyName = tasksNames[indexPath.row]
-//            listVC.fontNames = (UIFont.fontNames(forFamilyName: familyName) as [String]).sorted()
-//            listVC.navigationItem.title = familyName
-//            listVC.showsFavourites = false
-//        }
-//        else {
-//            listVC.fontNames = tasksList.favourites
-//            listVC.navigationItem.title = "Favourites"
-//            listVC.showsFavourites = true
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == Constants.Text.EditTaskSegueIdentifier {
+            // Set destination view controller
+            let editTaskVC = segue.destination as! EditTaskViewController
+            
+            // Set information for selected task in the following view controller
+            // Row order is retreived from the button tag
+            editTaskVC.selectedTask = tasksList.tasks[(sender as! UIButton).tag]
+        }
+        
+    }
     
     
 }

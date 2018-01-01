@@ -12,21 +12,20 @@ import UIKit
 
 class CreateTaskViewController: UIViewController, UITextViewDelegate {
 
-    private let descriptionPlaceHolder: String = "Enter a description ..."
+    // Constant text used for Task Description place holder
+    private let descriptionPlaceHolder: String = Constants.Text.DescriptionPlaceHolder
+    
+    // OUTLETS
     
     @IBOutlet weak var taskNameTextField: UITextField!
     
     @IBOutlet weak var taskNameTextView: UITextView!
     
+    
     // OVERRIDDE FUNCTIONS FOR UIVIEWCONTROLLER PROTOCOL
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let myUITextView = UITextView.init()
-//        myUITextView.delegate = self
-//        myUITextView.text = descriptionPlaceHolder
-//        myUITextView.textColor = .lightGray
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +43,7 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
             textView.text = ""
             textView.textColor = .black
         }
-        textView.becomeFirstResponder() //Optional
+        textView.becomeFirstResponder()
     }
     
     func textViewDidEndEditing(_ textView: UITextView)
