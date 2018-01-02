@@ -103,6 +103,19 @@ class EditTaskViewController: UIViewController {
         //TO DO:
         // 1. Show a Alert with confirmation, that the user is about to modify the task
         // 2. Save modifiedTask object values to selectedTask object and save the TasksList
+        let updateConfirmationAlert = UIAlertController(title: "Update Task", message: "Task will be updated. Continue?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        updateConfirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            self.modifiedTask=Task(self.taskNameTextField.text!, self.taskDescriptionTextView.text!, false)
+            TasksList.sharedTasksList.updateTask(aTask: self.modifiedTask)
+            self.navigationController?.popViewController(animated:true)
+        }))
+        
+        updateConfirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            // Do nothing. Stays in current screen.
+        }))
+        
+        present(updateConfirmationAlert, animated: true, completion: nil)
     }
     
     // Allows us detect when user finishes editing task name or task description
