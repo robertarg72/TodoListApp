@@ -66,6 +66,9 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
+        // Remove task from TaskList Singleton and redirect to the Tasks List screen
+        TasksList.sharedTasksList.removeTask(aTask: selectedTask)
+        self.navigationController?.popViewController(animated:true)
     }
     
     @IBAction func onUpdateButtonPressed(_ sender: UIButton) {
