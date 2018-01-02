@@ -83,9 +83,20 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
-        // Remove task from TaskList Singleton and redirect to the Tasks List screen
-        TasksList.sharedTasksList.removeTask(aTask: selectedTask)
-        self.navigationController?.popViewController(animated:true)
+        // Show a confirmation alert before deleting the task
+        let deleteConfirmationAlert = UIAlertController(title: "Delete Task", message: "Task will be deleted. Continue?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        deleteConfirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            // Remove task from TaskList Singleton and navigate to the Tasks List screen
+            TasksList.sharedTasksList.removeTask(aTask: self.selectedTask)
+            self.navigationController?.popViewController(animated:true)
+        }))
+        
+        deleteConfirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+           // Do nothing. Stays in current screen.
+        }))
+        
+        present(deleteConfirmationAlert, animated: true, completion: nil)
     }
     
     @IBAction func onUpdateButtonPressed(_ sender: UIButton) {
