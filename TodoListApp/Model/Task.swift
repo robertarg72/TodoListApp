@@ -36,6 +36,13 @@ class Task : NSObject, NSCoding {
         self.completed = completed
     }
     
+    init(_ aTask:Task) {
+        self.id = aTask.id
+        self.name = aTask.name
+        self.notes = aTask.notes
+        self.completed = aTask.completed
+    }
+    
     // Implements Equatable Protocol, to be able to compare two task objects
     // It is not listed in the class declaration above, because NSObject includes Equatable protocol. It is redundant.
     static func ==(lhs: Task, rhs: Task) -> Bool {

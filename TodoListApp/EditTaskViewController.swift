@@ -13,8 +13,9 @@ import UIKit
 
 class EditTaskViewController: UIViewController {
 
-    // Local variables
+    // Local variables for the task information from the root controller, and for storing the modified info performed in the screen
     var selectedTask: Task! = nil
+    var modifiedTask: Task! = nil
     
     // OUTLETS
     
@@ -32,19 +33,35 @@ class EditTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Fill selected task data to the corresponding views
+        // Fill selected task data retrieved from root controller to the corresponding views
         if selectedTask != nil {
             taskNameTextField.text = selectedTask.name
             taskDescriptionTextView.text = selectedTask.notes
             taskStatusLabel.text = selectedTask.completed ? Constants.Text.CompletedTask : Constants.Text.ActiveTask
             taskStatusSwitch.isOn = !selectedTask.completed
         }
+        
+        // Initialize modified task object to store selected task from root controller
+        modifiedTask = Task(selectedTask)
     }
     
 
     // ACTIONS
     
     @IBAction func onSwitchValueChanged(_ sender: UISwitch) {
+        // Color to be used for Active Task or Completed Task
+        let activeColorForStatusText = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
+                                               green: Utils.rgbHexaComponentToDecimal("00"),
+                                               blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
+        
+        let completedColorForStatusText = UIColor(red: Utils.rgbHexaComponentToDecimal("A1"),
+                                                  green: Utils.rgbHexaComponentToDecimal("A2"),
+                                                  blue: Utils.rgbHexaComponentToDecimal("A1"), alpha: 1)
+        
+        // Set label text in the screen, and update the modified task copy
+        modifiedTask.completed = !sender.isOn
+        taskStatusLabel.text = sender.isOn ? Constants.Text.ActiveTask : Constants.Text.CompletedTask
+        taskStatusLabel.textColor = sender.isOn ? activeColorForStatusText : completedColorForStatusText
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
@@ -72,5 +89,8 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onUpdateButtonPressed(_ sender: UIButton) {
+        //TO DO:
+        // 1. Show a Alert with confirmation, that the user is about to modify the task
+        // 2. Save modifiedTask object values to selectedTask object and save the TasksList
     }
 }
