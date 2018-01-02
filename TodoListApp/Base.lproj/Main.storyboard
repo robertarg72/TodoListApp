@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rBg-cp-auB">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController storyboardIdentifier="TasksList" title="Tasks List" id="AAa-Hu-YD3" customClass="RootViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0R-bd-BKF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="254"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZAt-Qv-DUb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="202"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskName" id="a5w-xf-N4r" customClass="TaskViewCell" customModule="TodoListApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a5w-xf-N4r" id="gEZ-1c-K2S">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="568" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-ut-n2C">
@@ -37,7 +37,7 @@
                                                     </connections>
                                                 </switch>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-sE-GpX">
-                                                    <rect key="frame" x="268" y="5.5" width="32" height="33"/>
+                                                    <rect key="frame" x="516" y="5.5" width="32" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <state key="normal" title="Edit">
                                                         <color key="titleColor" red="0.63921568630000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -77,7 +77,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPf-AQ-MEk">
-                                <rect key="frame" x="127" y="313" width="66" height="66"/>
+                                <rect key="frame" x="251" y="185" width="66" height="66"/>
                                 <state key="normal" image="Create New Task Button"/>
                                 <connections>
                                     <segue destination="HeT-sN-GN0" kind="show" id="3u0-LZ-uJH"/>
@@ -109,7 +109,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
 </string>
                         <barButtonItem key="rightBarButtonItem" id="aBA-sV-Rcw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y82-mY-YTx">
-                                <rect key="frame" x="256" y="39.5" width="48" height="33"/>
+                                <rect key="frame" x="500" y="34" width="48" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <state key="normal" title="About">
@@ -134,17 +134,17 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <viewController title="About" id="lOU-c0-mH7" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Mg-ah-gka">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9OP-Q2-Oa0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="288"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1b-48-jOP">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="423"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qur-Lv-6hH">
-                                                <rect key="frame" x="88" y="15" width="144" height="386"/>
+                                                <rect key="frame" x="212.5" y="18.5" width="144" height="386"/>
                                                 <string key="text">Assignment 2
 To Do List App
 
@@ -175,16 +175,22 @@ Centennial College
                                             <constraint firstItem="qur-Lv-6hH" firstAttribute="centerY" secondItem="S1b-48-jOP" secondAttribute="centerY" id="ddo-hA-c5S"/>
                                             <constraint firstAttribute="height" constant="416" id="in3-k7-FPN"/>
                                             <constraint firstItem="qur-Lv-6hH" firstAttribute="centerX" secondItem="S1b-48-jOP" secondAttribute="centerX" id="jip-aA-BDI"/>
+                                            <constraint firstItem="qur-Lv-6hH" firstAttribute="centerY" secondItem="S1b-48-jOP" secondAttribute="centerY" id="l7y-XU-fuk"/>
                                             <constraint firstItem="qur-Lv-6hH" firstAttribute="centerX" secondItem="S1b-48-jOP" secondAttribute="centerX" id="nxz-SU-Cgx"/>
+                                            <constraint firstAttribute="height" constant="416" id="ofU-kf-eet"/>
+                                            <constraint firstItem="qur-Lv-6hH" firstAttribute="centerX" secondItem="S1b-48-jOP" secondAttribute="centerX" id="zE7-fg-qKJ"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="V1s-tW-KVg"/>
                                                 <exclude reference="in3-k7-FPN"/>
+                                                <exclude reference="ofU-kf-eet"/>
                                                 <exclude reference="bba-d4-VEe"/>
                                                 <exclude reference="ddo-hA-c5S"/>
                                                 <exclude reference="jip-aA-BDI"/>
+                                                <exclude reference="l7y-XU-fuk"/>
                                                 <exclude reference="nxz-SU-Cgx"/>
+                                                <exclude reference="zE7-fg-qKJ"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact-widthClass=compact">
@@ -192,6 +198,13 @@ Centennial College
                                                 <include reference="V1s-tW-KVg"/>
                                                 <include reference="ddo-hA-c5S"/>
                                                 <include reference="jip-aA-BDI"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="ofU-kf-eet"/>
+                                                <include reference="l7y-XU-fuk"/>
+                                                <include reference="zE7-fg-qKJ"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -207,22 +220,30 @@ Centennial College
                                     <constraint firstAttribute="bottom" secondItem="S1b-48-jOP" secondAttribute="bottom" id="57C-kb-bTY"/>
                                     <constraint firstItem="S1b-48-jOP" firstAttribute="leading" secondItem="9OP-Q2-Oa0" secondAttribute="leading" id="Aia-nN-IWZ"/>
                                     <constraint firstAttribute="trailing" secondItem="S1b-48-jOP" secondAttribute="trailing" id="D5M-cU-p9x"/>
+                                    <constraint firstItem="S1b-48-jOP" firstAttribute="leading" secondItem="9OP-Q2-Oa0" secondAttribute="leading" id="Fvi-ng-BN9"/>
                                     <constraint firstAttribute="bottom" secondItem="S1b-48-jOP" secondAttribute="bottom" id="KiG-fH-YAZ"/>
                                     <constraint firstAttribute="trailing" secondItem="S1b-48-jOP" secondAttribute="trailing" id="QKM-1M-ghl"/>
+                                    <constraint firstAttribute="trailing" secondItem="S1b-48-jOP" secondAttribute="trailing" id="YHl-Un-lza"/>
                                     <constraint firstItem="S1b-48-jOP" firstAttribute="leading" secondItem="9OP-Q2-Oa0" secondAttribute="leading" id="dye-aA-UVi"/>
                                     <constraint firstItem="S1b-48-jOP" firstAttribute="top" secondItem="9OP-Q2-Oa0" secondAttribute="top" id="eJs-hu-vEK"/>
                                     <constraint firstItem="S1b-48-jOP" firstAttribute="top" secondItem="9OP-Q2-Oa0" secondAttribute="top" id="ldo-Z8-QDe"/>
+                                    <constraint firstItem="S1b-48-jOP" firstAttribute="top" secondItem="9OP-Q2-Oa0" secondAttribute="top" id="t4P-fH-e6Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="S1b-48-jOP" secondAttribute="bottom" id="zlA-t2-S0a"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="57C-kb-bTY"/>
                                         <exclude reference="Aia-nN-IWZ"/>
                                         <exclude reference="D5M-cU-p9x"/>
+                                        <exclude reference="Fvi-ng-BN9"/>
                                         <exclude reference="KiG-fH-YAZ"/>
                                         <exclude reference="QKM-1M-ghl"/>
+                                        <exclude reference="YHl-Un-lza"/>
                                         <exclude reference="dye-aA-UVi"/>
                                         <exclude reference="eJs-hu-vEK"/>
                                         <exclude reference="ldo-Z8-QDe"/>
+                                        <exclude reference="t4P-fH-e6Y"/>
+                                        <exclude reference="zlA-t2-S0a"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
@@ -231,6 +252,14 @@ Centennial College
                                         <include reference="D5M-cU-p9x"/>
                                         <include reference="dye-aA-UVi"/>
                                         <include reference="eJs-hu-vEK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Fvi-ng-BN9"/>
+                                        <include reference="YHl-Un-lza"/>
+                                        <include reference="t4P-fH-e6Y"/>
+                                        <include reference="zlA-t2-S0a"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -246,28 +275,38 @@ Centennial College
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="bottom" secondItem="Fxn-Gj-FqP" secondAttribute="bottom" id="0rP-SJ-tG2"/>
+                            <constraint firstItem="9OP-Q2-Oa0" firstAttribute="top" secondItem="Fxn-Gj-FqP" secondAttribute="top" id="6GC-2J-6L2"/>
                             <constraint firstItem="S1b-48-jOP" firstAttribute="width" secondItem="7Mg-ah-gka" secondAttribute="width" id="8Ih-J9-yIz"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="bottom" secondItem="Fxn-Gj-FqP" secondAttribute="bottom" id="Fet-Il-gAw"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="trailing" secondItem="Fxn-Gj-FqP" secondAttribute="trailing" id="Hwc-Xr-7o0"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="top" secondItem="Fxn-Gj-FqP" secondAttribute="top" id="MIT-i0-3vO"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="trailing" secondItem="Fxn-Gj-FqP" secondAttribute="trailing" id="MLl-LQ-C4p"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="leading" secondItem="Fxn-Gj-FqP" secondAttribute="leading" id="Mdk-UP-Tdl"/>
+                            <constraint firstItem="S1b-48-jOP" firstAttribute="width" secondItem="7Mg-ah-gka" secondAttribute="width" id="PO7-1M-faP"/>
+                            <constraint firstItem="9OP-Q2-Oa0" firstAttribute="leading" secondItem="Fxn-Gj-FqP" secondAttribute="leading" id="RPi-Wg-ery"/>
                             <constraint firstItem="S1b-48-jOP" firstAttribute="width" secondItem="7Mg-ah-gka" secondAttribute="width" id="W0H-kE-ccj"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="leading" secondItem="Fxn-Gj-FqP" secondAttribute="leading" id="g8v-E5-s9H"/>
+                            <constraint firstItem="9OP-Q2-Oa0" firstAttribute="bottom" secondItem="Fxn-Gj-FqP" secondAttribute="bottom" id="ghw-LZ-7zi"/>
+                            <constraint firstItem="9OP-Q2-Oa0" firstAttribute="trailing" secondItem="Fxn-Gj-FqP" secondAttribute="trailing" id="iXZ-Eo-weu"/>
                             <constraint firstItem="9OP-Q2-Oa0" firstAttribute="top" secondItem="Fxn-Gj-FqP" secondAttribute="top" id="uiW-On-IFb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fxn-Gj-FqP"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0rP-SJ-tG2"/>
+                                <exclude reference="6GC-2J-6L2"/>
                                 <exclude reference="Fet-Il-gAw"/>
                                 <exclude reference="Hwc-Xr-7o0"/>
                                 <exclude reference="MIT-i0-3vO"/>
                                 <exclude reference="MLl-LQ-C4p"/>
                                 <exclude reference="Mdk-UP-Tdl"/>
+                                <exclude reference="RPi-Wg-ery"/>
                                 <exclude reference="g8v-E5-s9H"/>
+                                <exclude reference="ghw-LZ-7zi"/>
+                                <exclude reference="iXZ-Eo-weu"/>
                                 <exclude reference="uiW-On-IFb"/>
                                 <exclude reference="8Ih-J9-yIz"/>
+                                <exclude reference="PO7-1M-faP"/>
                                 <exclude reference="W0H-kE-ccj"/>
                             </mask>
                         </variation>
@@ -278,6 +317,15 @@ Centennial College
                                 <include reference="g8v-E5-s9H"/>
                                 <include reference="uiW-On-IFb"/>
                                 <include reference="8Ih-J9-yIz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="6GC-2J-6L2"/>
+                                <include reference="RPi-Wg-ery"/>
+                                <include reference="ghw-LZ-7zi"/>
+                                <include reference="iXZ-Eo-weu"/>
+                                <include reference="PO7-1M-faP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -293,30 +341,30 @@ Centennial College
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93r-M0-GTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636.25" y="123.75"/>
+            <point key="canvasLocation" x="1636.1413043478262" y="123.18840579710145"/>
         </scene>
         <!--Tasks Details-->
         <scene sceneID="NtM-hy-8kk">
             <objects>
                 <viewController id="4ue-aM-1Aw" customClass="EditTaskViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9xw-fb-wlt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="254"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaR-Ac-5CJ">
-                                <rect key="frame" x="20" y="24" width="100" height="21"/>
+                                <rect key="frame" x="19" y="2" width="177" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.63869035243988037" green="0.080422542989253998" blue="0.0015427590114995837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCX-67-0SS">
-                                <rect key="frame" x="20" y="112" width="141" height="21"/>
+                                <rect key="frame" x="19" y="57" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.63869035243988037" green="0.080422542989253998" blue="0.0015427590114995837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-kN-LqI">
-                                <rect key="frame" x="21" y="318" width="84.5" height="44"/>
+                                <rect key="frame" x="21" y="406" width="85" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -326,7 +374,7 @@ Centennial College
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEd-6F-Odn">
-                                <rect key="frame" x="212.5" y="318" width="84.5" height="44"/>
+                                <rect key="frame" x="212.5" y="406" width="84.5" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Update" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -336,7 +384,7 @@ Centennial College
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvF-KE-B5y">
-                                <rect key="frame" x="116.5" y="318" width="85" height="44"/>
+                                <rect key="frame" x="117" y="406" width="84.5" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Delete" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -346,21 +394,21 @@ Centennial College
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlS-Gk-8Zm">
-                                <rect key="frame" x="238" y="264" width="51" height="31"/>
+                                <rect key="frame" x="490" y="165" width="51" height="27"/>
                                 <color key="onTintColor" red="0.8666666666666667" green="0.1764705882352941" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="onSwitchValueChanged:" destination="4ue-aM-1Aw" eventType="valueChanged" id="V2E-iM-xwD"/>
                                 </connections>
                             </switch>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Uvw-7E-BPo">
-                                <rect key="frame" x="20" y="141" width="279" height="115"/>
+                                <rect key="frame" x="18" y="77" width="530" height="83"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-OL-kca">
-                                <rect key="frame" x="20" y="204" width="130" height="44"/>
+                                <rect key="frame" x="20" y="204" width="159.5" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,7 +418,7 @@ Centennial College
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23r-DG-86w">
-                                <rect key="frame" x="175" y="204" width="130" height="44"/>
+                                <rect key="frame" x="204.5" y="204" width="159" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Delete" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -380,7 +428,7 @@ Centennial College
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Task" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RpY-xf-dfH">
-                                <rect key="frame" x="91" y="269" width="125" height="21"/>
+                                <rect key="frame" x="338" y="171" width="125" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="6Kq-4N-Ovh"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="FFZ-1Z-bCg"/>
@@ -413,13 +461,13 @@ Centennial College
                                 </variation>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UI/UX Design prototype" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4US-PV-z7u">
-                                <rect key="frame" x="20" y="53" width="280" height="30"/>
+                                <rect key="frame" x="19" y="22" width="531" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UpN-jE-tYV">
-                                <rect key="frame" x="330" y="204" width="130" height="44"/>
+                                <rect key="frame" x="388.5" y="204" width="159.5" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Update" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -830,7 +878,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <navigationController id="rBg-cp-auB" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="1xs-pn-r2Q">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
@@ -848,29 +896,29 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
             <objects>
                 <viewController title="Create New Task" id="HeT-sN-GN0" customClass="CreateTaskViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkY-AU-rQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="254"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3c-Yd-cD6">
-                                <rect key="frame" x="20" y="29" width="98" height="20.5"/>
+                                <rect key="frame" x="19" y="5" width="177" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.63869035243988037" green="0.080422542989253998" blue="0.0015427590114995837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a name ..." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jhh-QN-2Bz">
-                                <rect key="frame" x="20" y="58.5" width="280" height="30"/>
+                                <rect key="frame" x="20" y="26" width="529" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgg-8z-kFu">
-                                <rect key="frame" x="20" y="119.5" width="140" height="21"/>
+                                <rect key="frame" x="19" y="71" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.63869035243988037" green="0.080422542989253998" blue="0.0015427590114995837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a description ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-WQ-UDL">
-                                <rect key="frame" x="20" y="153.5" width="279" height="141.5"/>
+                                <rect key="frame" x="19" y="93.5" width="531" height="98.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="118" id="4fr-No-ydn"/>
@@ -893,7 +941,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxP-OB-JbS">
-                                <rect key="frame" x="82" y="204" width="130" height="44"/>
+                                <rect key="frame" x="82" y="204" width="174" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -903,7 +951,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61X-1d-PZr">
-                                <rect key="frame" x="268" y="204" width="130" height="44"/>
+                                <rect key="frame" x="312" y="204" width="174" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create" backgroundImage="Long Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -913,7 +961,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bj-1Q-K9w">
-                                <rect key="frame" x="186.5" y="318" width="90" height="44"/>
+                                <rect key="frame" x="186.5" y="406" width="90" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -923,7 +971,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shF-Of-22A">
-                                <rect key="frame" x="45" y="318" width="90" height="44"/>
+                                <rect key="frame" x="45" y="406" width="90" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cancel" backgroundImage="Button Background">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
