@@ -138,7 +138,28 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline).pointSize * 5
     }
-
+ 
+    // Allows to perform a quick delete right from the main list of tasks, by doing swipe to the left
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            // Show a confirmation alert before deleting the task
+            let deleteConfirmationAlert = UIAlertController(title: "Delete Task", message: "Task will be deleted. Continue?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            deleteConfirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                // Remove task from TaskList Singleton and reload table view list
+                let selectedTask = TasksList.sharedTasksList.tasks[indexPath.row]
+                TasksList.sharedTasksList.removeTask(aTask: selectedTask)
+                self.todoListTableView.reloadData()
+            }))
+            
+            deleteConfirmationAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                // Do nothing. Stays in current screen.
+            }))
+            
+            present(deleteConfirmationAlert, animated: true, completion: nil)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = todoListTableView!.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
         cell.name?.text = tasksList.tasks[indexPath.row].name
