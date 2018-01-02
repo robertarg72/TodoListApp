@@ -70,4 +70,12 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
         // Pops current view controller out from the nav stack, previous controller shows up
         self.navigationController?.popViewController(animated:true)
     }
+    
+    // Allows us detect when user finishes editing task name or task description
+    // At that moment editing views should lose focus, in order to hide the phone software keyboard
+    @IBAction func onTapGestureRecognized(_ sender: Any) {
+        taskNameTextField.resignFirstResponder()
+        taskDescriptionTextView.resignFirstResponder()
+    }
+    
 }
