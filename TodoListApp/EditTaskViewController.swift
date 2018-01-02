@@ -104,4 +104,11 @@ class EditTaskViewController: UIViewController {
         // 1. Show a Alert with confirmation, that the user is about to modify the task
         // 2. Save modifiedTask object values to selectedTask object and save the TasksList
     }
+    
+    // Allows us detect when user finishes editing task name or task description
+    // At that moment editing views should lose focus, in order to hide the phone software keyboard
+    @IBAction func onTapGestureRecognized(_ sender: Any) {
+        taskNameTextField.resignFirstResponder()
+        taskDescriptionTextView.resignFirstResponder()
+    }
 }

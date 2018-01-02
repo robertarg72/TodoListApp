@@ -100,7 +100,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        todoListTableView!.reloadData()
+        //todoListTableView!.reloadData()
         //self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 800.0)
     }
     
