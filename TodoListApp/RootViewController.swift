@@ -17,6 +17,9 @@ import UIKit
 // Helper class to manage a Custom Cell with switch view and buttton inside
 class TaskViewCell: UITableViewCell {
     
+    // internal variable to store the row for the current cell
+    var row: Int = 0
+    
     // OUTLETS
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var completed: UISwitch!
@@ -24,32 +27,39 @@ class TaskViewCell: UITableViewCell {
     
     // ACTIONS
     @IBAction func onEditButtonPressed(_ sender: UIButton) {
-        
+        // Do nothing for now. Going to Details screen is managed by the segue.
     }
     
     @IBAction func onSwitchViewChange(_ sender: UISwitch) {
+        // Change views values in the cell, according to the switch status
         if( completed!.isOn ) {
-            completed!.isOn = false
+            let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
+                                              green: Utils.rgbHexaComponentToDecimal("61"),
+                                              blue: Utils.rgbHexaComponentToDecimal("61"), alpha: 1)
+            
+            let enabledColorForButtonTitle = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
+                                                     green: Utils.rgbHexaComponentToDecimal("00"),
+                                                     blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
+           
+            editButton.setTitleColor(enabledColorForButtonTitle, for: .normal)
+            editButton.isEnabled = true
+            name!.textColor = enabledColorForName
+            
+            
+        }
+        else {
             editButton.isEnabled = false
             editButton.setTitleColor(.gray, for: .normal)
             name!.textColor = UIColor(red: Utils.rgbHexaComponentToDecimal("E1"),
                                       green: Utils.rgbHexaComponentToDecimal("E2"),
                                       blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
-        }
-        else {
             
-            let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
-                                        green: Utils.rgbHexaComponentToDecimal("61"),
-                                        blue: Utils.rgbHexaComponentToDecimal("61"), alpha: 1)
-            
-            let enabledColorForButtonTitle = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
-                                              green: Utils.rgbHexaComponentToDecimal("00"),
-                                              blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
-            completed!.isOn = true
-            editButton.setTitleColor(enabledColorForButtonTitle, for: .normal)
-            editButton.isEnabled = true
-            name!.textColor = enabledColorForName
         }
+        
+        // Update the corresponding task and update the singleton TasksList
+        let currentTask = TasksList.sharedTasksList.tasks[row]
+        currentTask.completed = !completed!.isOn
+        TasksList.sharedTasksList.updateTask(aTask: currentTask)
     }
 }
 
@@ -124,6 +134,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = todoListTableView!.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
         
         cell.name?.text = tasksList.tasks[indexPath.row].name
+        cell.row = indexPath.row
         if tasksList.tasks[indexPath.row].completed {
             cell.completed?.isOn = false
             cell.completed?.isEnabled = false
