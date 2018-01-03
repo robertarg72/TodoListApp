@@ -49,6 +49,9 @@ class EditTaskViewController: UIViewController {
     // ACTIONS
     
     @IBAction func onSwitchValueChanged(_ sender: UISwitch) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         // Color to be used for Active Task or Completed Task
         let activeColorForStatusText = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
                                                green: Utils.rgbHexaComponentToDecimal("00"),
@@ -65,6 +68,8 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
         
         //let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         //let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksList") as! RootViewController
@@ -83,6 +88,9 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onDeleteButtonPressed(_ sender: UIButton) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         // Show a confirmation alert before deleting the task
         let deleteConfirmationAlert = UIAlertController(title: "Delete Task", message: "Task will be deleted. Continue?", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -100,9 +108,9 @@ class EditTaskViewController: UIViewController {
     }
     
     @IBAction func onUpdateButtonPressed(_ sender: UIButton) {
-        //TO DO:
-        // 1. Show a Alert with confirmation, that the user is about to modify the task
-        // 2. Save modifiedTask object values to selectedTask object and save the TasksList
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         let updateConfirmationAlert = UIAlertController(title: "Update Task", message: "Task will be updated. Continue?", preferredStyle: UIAlertControllerStyle.alert)
         
         updateConfirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in

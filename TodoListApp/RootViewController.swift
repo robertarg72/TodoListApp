@@ -31,6 +31,9 @@ class TaskViewCell: UITableViewCell {
     }
     
     @IBAction func onSwitchViewChange(_ sender: UISwitch) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         // Change views values in the cell, according to the switch status
         if( completed!.isOn ) {
             let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
@@ -190,6 +193,8 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // SEGUE CONNECTION METHOD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
         
         if segue.identifier == Constants.Text.EditTaskSegueIdentifier {
             // Set destination view controller

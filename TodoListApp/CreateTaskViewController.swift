@@ -58,11 +58,17 @@ class CreateTaskViewController: UIViewController, UITextViewDelegate {
     // ACTION FUNCTIONS
     
     @IBAction func onCancelButtonPressed(_ sender: UIButton) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         // Pops current view controller out from the nav stack, previous controller shows up
         self.navigationController?.popViewController(animated:true)
     }
     
     @IBAction func onCreateButtonPressed(_ sender: UIButton) {
+        // Play a sound when button is pressed
+        Utils.playSound(file: "Pop", ext: "aiff")
+        
         //Create new task and save it using the TaskList api
         let newTask = Task(taskNameTextField.text!, taskDescriptionTextView.text!, false)
         TasksList.sharedTasksList.addTask(aTask: newTask)
