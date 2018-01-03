@@ -11,10 +11,11 @@
  */
 
 import Foundation
+import UIKit
 
 struct Constants {
     
-    struct Color {
+    struct HexStringColor {
         static let DisabledText = "0xE1E2E1"  //0xD0D0D0
         static let TaskNameText = TextOnSecondary
         
@@ -27,6 +28,25 @@ struct Constants {
         static let TextOnSecondary = "0x616161"
     }
     
+    struct Color {
+        static let tintColorForNavigationBar = UIColor(red: Utils.rgbHexaComponentToDecimal("DD"),
+                                                green: Utils.rgbHexaComponentToDecimal("2D"),
+                                                blue: Utils.rgbHexaComponentToDecimal("01"), alpha: 1)
+        
+        static let disabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("A1"),
+                                           green: Utils.rgbHexaComponentToDecimal("A2"),
+                                           blue: Utils.rgbHexaComponentToDecimal("A1"), alpha: 1)
+        
+        static let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("41"),
+                                          green: Utils.rgbHexaComponentToDecimal("41"),
+                                          blue: Utils.rgbHexaComponentToDecimal("41"), alpha: 1)
+        
+        static let enabledColorForEditButtonText = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
+                                                    green: Utils.rgbHexaComponentToDecimal("00"),
+                                                    blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
+        
+    }
+    
     struct Text {
         static let ActiveTask = "Active Task"
         static let CompletedTask = "Completed Task"
@@ -34,4 +54,5 @@ struct Constants {
         static let EditTaskSegueIdentifier = "EditScreenSegue"
         static let UserDefaultsStorageKey = "tasks"
     }
+    
 }

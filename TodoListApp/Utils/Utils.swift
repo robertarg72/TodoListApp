@@ -39,4 +39,28 @@ class Utils {
             NSLog(error.localizedDescription)
         }
     }
+    
+    
+    public static func updateCellStyleAccordingToSwitchValue(_ name:UILabel?, _ editButton:UIButton, _ completed:UISwitch? ) {
+        // Setup and attributed string object to customize text appearance
+        let range = (name!.text! as NSString).range(of: name!.text!)
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: name!.text!)
+        
+        // Change views values in the cell, according to the switch status
+        if( completed!.isOn ) {
+            editButton.setTitleColor(Constants.Color.enabledColorForEditButtonText, for: .normal)
+            editButton.isEnabled = true
+            //name!.textColor = Constants.Color.enabledColorForName
+            attributeString.removeAttribute(NSAttributedStringKey.strikethroughStyle, range: range)
+            attributeString.addAttribute(NSAttributedStringKey.foregroundColor, value: Constants.Color.enabledColorForName, range: range)
+        }
+        else {
+            editButton.isEnabled = false
+            editButton.setTitleColor(.gray, for: .normal)
+            attributeString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 2, range: range)
+            attributeString.addAttribute(NSAttributedStringKey.foregroundColor, value: Constants.Color.disabledColorForName, range: range)
+        }
+        
+        name!.attributedText = attributeString
+    }
 }

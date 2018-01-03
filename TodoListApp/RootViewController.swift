@@ -34,30 +34,7 @@ class TaskViewCell: UITableViewCell {
         // Play a sound when button is pressed
         Utils.playSound(file: "Pop", ext: "aiff")
         
-        // Change views values in the cell, according to the switch status
-        if( completed!.isOn ) {
-            let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
-                                              green: Utils.rgbHexaComponentToDecimal("61"),
-                                              blue: Utils.rgbHexaComponentToDecimal("61"), alpha: 1)
-            
-            let enabledColorForButtonTitle = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
-                                                     green: Utils.rgbHexaComponentToDecimal("00"),
-                                                     blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
-           
-            editButton.setTitleColor(enabledColorForButtonTitle, for: .normal)
-            editButton.isEnabled = true
-            name!.textColor = enabledColorForName
-            
-            
-        }
-        else {
-            editButton.isEnabled = false
-            editButton.setTitleColor(.gray, for: .normal)
-            name!.textColor = UIColor(red: Utils.rgbHexaComponentToDecimal("E1"),
-                                      green: Utils.rgbHexaComponentToDecimal("E2"),
-                                      blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
-            
-        }
+        Utils.updateCellStyleAccordingToSwitchValue(name, editButton, completed)
         
         // Update the corresponding task and update the singleton TasksList
         let currentTask = TasksList.sharedTasksList.tasks[row]
@@ -76,21 +53,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var todoListTableView: UITableView!
     
     // Private constants for setting up color used in this screen
-    let tintColorForNavigationBar = UIColor(red: Utils.rgbHexaComponentToDecimal("DD"),
-                                            green: Utils.rgbHexaComponentToDecimal("2D"),
-                                            blue: Utils.rgbHexaComponentToDecimal("01"), alpha: 1)
     
-    let disabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("E1"),
-                                       green: Utils.rgbHexaComponentToDecimal("E2"),
-                                       blue: Utils.rgbHexaComponentToDecimal("E1"), alpha: 1)
-    
-    let enabledColorForName = UIColor(red: Utils.rgbHexaComponentToDecimal("61"),
-                                    green: Utils.rgbHexaComponentToDecimal("61"),
-                                    blue: Utils.rgbHexaComponentToDecimal("61"), alpha: 1)
-    
-    let enabledColorForEditButtonText = UIColor(red: Utils.rgbHexaComponentToDecimal("A0"),
-                                             green: Utils.rgbHexaComponentToDecimal("00"),
-                                             blue: Utils.rgbHexaComponentToDecimal("00"), alpha: 1)
     
     // OVERRIDDE FUNCTIONS FOR UIVIEWCONTROLLER PROTOCOL
     
@@ -117,7 +80,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let  preferredTableViewFont =  UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
         todoListTableView!.estimatedRowHeight = cellPointSize
-        navigationController?.navigationBar.barTintColor = tintColorForNavigationBar
+        navigationController?.navigationBar.barTintColor = Constants.Color.tintColorForNavigationBar
         navigationController?.navigationBar.tintColor = UIColor.white
         
         let attrs = [
@@ -169,23 +132,12 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = todoListTableView!.dequeueReusableCell(withIdentifier: RootViewController.taskCell, for: indexPath) as! TaskViewCell
         cell.name?.text = tasksList.tasks[indexPath.row].name
-        cell.row = indexPath.row // Save cell row position in the table view, for updating each task when switch changed on event happens
         
-        // Set up status, task name font color, and edit button text color according to data stored in the TasksList shared singleton
-        if tasksList.tasks[indexPath.row].completed {
-            cell.completed?.isOn = false
-            //cell.completed?.isEnabled = false
-            //cell.editButton?.isEnabled = false
-            cell.editButton?.setTitleColor(.gray, for: .normal)
-            cell.name?.textColor = disabledColorForName
-        }
-        else {
-            cell.completed?.isOn = true
-            cell.completed?.isEnabled = true
-            cell.editButton?.isEnabled = true
-            cell.editButton?.setTitleColor(enabledColorForEditButtonText, for: .normal)
-            cell.name?.textColor = enabledColorForName
-        }
+        // Save cell row position in the table view, for updating each task when switch changed event happens
+        cell.row = indexPath.row
+
+        cell.completed?.isOn = !tasksList.tasks[indexPath.row].completed
+        Utils.updateCellStyleAccordingToSwitchValue(cell.name, cell.editButton, cell.completed)
         
         // Set button tag to the cell order row, so we have that info for the segue action
         cell.editButton?.tag = indexPath.row
@@ -209,8 +161,6 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    
-    
 }
 
 
