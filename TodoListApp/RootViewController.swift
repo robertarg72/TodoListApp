@@ -145,6 +145,9 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Allows to perform a quick delete right from the main list of tasks, by doing swipe to the left
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
+            // Play a sound when button is pressed
+            Utils.playSound(file: "Pop", ext: "aiff")
+            
             // Show a confirmation alert before deleting the task
             let deleteConfirmationAlert = UIAlertController(title: "Delete Task", message: "Task will be deleted. Continue?", preferredStyle: UIAlertControllerStyle.alert)
             
