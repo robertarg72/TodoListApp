@@ -39,12 +39,9 @@ class TasksList {
         
         if let currentTask = aTask {
             if !tasks.contains(currentTask) {
-                //currentTask.id = tasks.endIndex
-                //tasks.append(currentTask)
-                
                 // Append task at the beggining of the array
                 tasks.insert(currentTask, at: 0)
-                currentTask.id = 0
+                currentTask.id = tasks.endIndex
                 saveTask()
             }
         }
@@ -63,7 +60,8 @@ class TasksList {
     // This method updates a specific task. If it does not exists, then it will add it.
     func updateTask(aTask: Task?) {
         if let currentTask = aTask {
-            if let index = tasks.index(of: currentTask) {
+            // Find if task already exist by comparing IDs
+            if let index = tasks.index(where: { $0.id == currentTask.id }) {
                 tasks[index].name = currentTask.name
                 tasks[index].notes = currentTask.notes
                 tasks[index].completed = currentTask.completed

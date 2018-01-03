@@ -106,7 +106,10 @@ class EditTaskViewController: UIViewController {
         let updateConfirmationAlert = UIAlertController(title: "Update Task", message: "Task will be updated. Continue?", preferredStyle: UIAlertControllerStyle.alert)
         
         updateConfirmationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            self.modifiedTask=Task(self.taskNameTextField.text!, self.taskDescriptionTextView.text!, false)
+            //self.modifiedTask=Task(self.selectedTask.id, self.taskNameTextField.text!, self.taskDescriptionTextView.text!, false)
+            self.modifiedTask.name = self.taskNameTextField.text!
+            self.modifiedTask.notes = self.taskDescriptionTextView.text!
+            self.modifiedTask.completed = !self.taskStatusSwitch.isOn
             TasksList.sharedTasksList.updateTask(aTask: self.modifiedTask)
             self.navigationController?.popViewController(animated:true)
         }))

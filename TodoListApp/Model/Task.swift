@@ -47,8 +47,7 @@ class Task : NSObject, NSCoding {
     // It is not listed in the class declaration above, because NSObject includes Equatable protocol. It is redundant.
     static func ==(lhs: Task, rhs: Task) -> Bool {
         return lhs.id == rhs.id
-        // Two tasks are the same if the name is the same. Case insensitive.
-        //return lhs.name.caseInsensitiveCompare(rhs.name) == ComparisonResult.orderedSame
+        //return lhs.id == rhs.id && lhs.name == rhs.name && lhs.notes == rhs.notes && lhs.completed == rhs.completed
     }
     
     // Functions for NSCoding Protocol
