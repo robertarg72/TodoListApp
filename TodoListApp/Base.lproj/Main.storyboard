@@ -144,7 +144,7 @@ ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="423"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qur-Lv-6hH">
-                                                <rect key="frame" x="212.5" y="18.5" width="144" height="386"/>
+                                                <rect key="frame" x="209.5" y="18.5" width="150.5" height="386"/>
                                                 <string key="text">Assignment 2
 To Do List App
 
@@ -163,8 +163,8 @@ Analia Longhi
 
 Centennial College
 2018</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" red="0.63921568627450975" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
